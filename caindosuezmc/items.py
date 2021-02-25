@@ -1,7 +1,7 @@
 import scrapy
 
 
-class CaindosuezItem(scrapy.Item):
+class CaindosuezmcItem(scrapy.Item):
     title = scrapy.Field()
     description = scrapy.Field()
     date = scrapy.Field()

@@ -1,6 +1,6 @@
-URL: https://ca-indosuez.com/fr/presse
+URL: https://ca-indosuezmc.com/fr/presse
 
-Spider name: caindosuez
+Spider name: caindosuezmc
 DB Schema:
 
 title

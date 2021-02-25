@@ -2,12 +2,12 @@ import re
 import sqlite3
 
 
-class CaindosuezPipeline:
-    conn = sqlite3.connect('caindosuez.db')
+class CaindosuezmcPipeline:
+    conn = sqlite3.connect('caindosuezmc.db')
     cursor = conn.cursor()
 
     def open_spider(self, spider):
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS `caindosuez` (
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS `caindosuezmc` (
                                                                         title varchar(100),
                                                                         description text,
                                                                         date text
@@ -30,12 +30,12 @@ class CaindosuezPipeline:
         except:
             date = ''
 
-        self.cursor.execute(f'''select * from caindosuez where title = "{title}" and date = "{date}"''')
+        self.cursor.execute(f'''select * from caindosuezmc where title = "{title}" and date = "{date}"''')
         is_exist = self.cursor.fetchall()
 
         if len(is_exist) == 0:
             self.cursor.execute(
-                f'''insert into `caindosuez` (`title`, `description`, `date`) values ("{title}", "{description}", "{date}")''')
+                f'''insert into `caindosuezmc` (`title`, `description`, `date`) values ("{title}", "{description}", "{date}")''')
             self.conn.commit()
 
         return item

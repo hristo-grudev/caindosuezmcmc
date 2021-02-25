@@ -1,12 +1,12 @@
 import scrapy
 
 from scrapy.loader import ItemLoader
-from ..items import CaindosuezItem
+from ..items import CaindosuezmcItem
 from itemloaders.processors import TakeFirst
 
 
-class CaindosuezSpider(scrapy.Spider):
-	name = 'caindosuez'
+class CaindosuezmcSpider(scrapy.Spider):
+	name = 'caindosuezmc'
 	start_urls = ['https://ca-indosuez.com/fr/presse']
 
 	def parse(self, response):
@@ -20,7 +20,7 @@ class CaindosuezSpider(scrapy.Spider):
 		description = ' '.join(description).strip()
 		date = response.xpath('//div[@class="block-articleTitle--author mb-30"]/p/text()').get()
 
-		item = ItemLoader(item=CaindosuezItem(), response=response)
+		item = ItemLoader(item=CaindosuezmcItem(), response=response)
 		item.default_output_processor = TakeFirst()
 		item.add_value('title', title)
 		item.add_value('description', description)

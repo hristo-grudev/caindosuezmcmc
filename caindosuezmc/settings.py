@@ -1,7 +1,7 @@
-BOT_NAME = 'caindosuez'
+BOT_NAME = 'caindosuezmc'
 
-SPIDER_MODULES = ['caindosuez.spiders']
-NEWSPIDER_MODULE = 'caindosuez.spiders'
+SPIDER_MODULES = ['caindosuezmc.spiders']
+NEWSPIDER_MODULE = 'caindosuezmc.spiders'
 FEED_EXPORT_ENCODING = 'utf-8'
 LOG_LEVEL = 'ERROR'
 DOWNLOAD_DELAY = 0
@@ -9,7 +9,7 @@ DOWNLOAD_DELAY = 0
 ROBOTSTXT_OBEY = True
 
 ITEM_PIPELINES = {
-	'caindosuez.pipelines.CaindosuezPipeline': 100,
+	'caindosuezmc.pipelines.CaindosuezmcPipeline': 100,
 
 }
 
